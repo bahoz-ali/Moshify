@@ -174,7 +174,7 @@ a {
 .btn {
   padding: 2rem 3rem;
   margin: 1rem 0;
-  
+
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -226,6 +226,27 @@ a {
 
 @media screen and (max-width: 1024px) {
   .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* inputs  */
+
+.input {
+  padding: 1.5rem 3.5rem;
+  color: var(--color-headings);
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: 0;
+}
+
+::placeholder {
+  color: #cdcbd7;
+}
+
+@media screen and (min-width: 1024px) {
+  .input {
     font-size: 1.5rem;
   }
 }
