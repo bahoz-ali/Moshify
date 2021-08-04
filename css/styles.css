@@ -220,6 +220,11 @@ a {
 .btn--secondary:hover {
   background: #00c8eb;
 }
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
 .btn--accent {
   background: var(--color-accent);
   color: #fff;
@@ -487,5 +492,45 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+/*todo ===== Callouts =====*/
+
+.callout {
+  padding: 4rem;
+  border: radius 5px;
+}
+.callout--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.callout__heading {
+  margin-top: 0;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.callout .btn {
+  justify-self: center;
+  align-self: center;
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout .grid--1x2 {
+    grid-template-columns: 1fr auto;
+  }
+
+  .callout__content {
+    text-align: left;
+  }
+  .callout .btn {
+    margin: 0 2rem;
+    justify-self: start;
   }
 }
