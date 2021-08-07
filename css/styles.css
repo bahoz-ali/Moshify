@@ -34,6 +34,7 @@ h3,
 h4 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 h1 {
   font-size: 7rem;
@@ -623,7 +624,6 @@ a {
 
 .nav__item {
   padding: 0.5rem 2rem;
-
   border-bottom: 1px solid #222;
 }
 .nav__item > a {
@@ -659,12 +659,36 @@ a {
     display: flex;
     font-size: 1.6rem;
     width: auto;
-
     max-height: 100vh;
     opacity: 1;
   }
 
   .nav__item {
     border: 0;
+  }
+}
+
+/* todo: ====== Hero ===== */
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+@media screen and (min-width: 768px) {
+  .hero{
+    padding-top: 0;
+  }
+  .hero__content {
+    text-align: left;
+    align-self: center;
   }
 }
