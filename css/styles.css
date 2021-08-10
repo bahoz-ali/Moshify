@@ -22,6 +22,8 @@ html {
 }
 
 body {
+  width: 100%;
+  overflow-x: hidden;
   font-family: "Inter", arial, helvetica;
   color: var(--color-body);
   font-size: 2.4rem;
@@ -193,7 +195,7 @@ a {
   padding: 2rem 3rem;
   margin: 1rem 0;
 
-  font-size: 1.8rem;
+  font-size: 1.8r em;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
@@ -204,6 +206,12 @@ a {
 
   white-space: nowrap;
   cursor: pointer;
+}
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 
 .btn--primary {
@@ -264,6 +272,22 @@ a {
   outline: 0;
 }
 
+::-webkit-input-placeholder {
+  color: #cdcbd7;
+}
+
+::-moz-placeholder {
+  color: #cdcbd7;
+}
+
+:-ms-input-placeholder {
+  color: #cdcbd7;
+}
+
+::-ms-input-placeholder {
+  color: #cdcbd7;
+}
+
 ::placeholder {
   color: #cdcbd7;
 }
@@ -274,7 +298,7 @@ a {
 }
 
 .input-group .input {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
   border: 0;
   flex-grow: 1;
 }
@@ -594,11 +618,13 @@ a {
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
 }
 
@@ -680,15 +706,45 @@ a {
   width: 100%;
 }
 .hero {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 @media screen and (min-width: 768px) {
-  .hero{
+  .hero {
     padding-top: 0;
   }
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* todo: ===== Domain Block ===== */
+
+.block-domain .input-group {
+  box-shadow: 0 0 30px /*blur*/ 20px /*radius*/ #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+
+.block-domain__prices {
+  max-width: 700px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  justify-items: center;
+  align-items: center;
+
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
