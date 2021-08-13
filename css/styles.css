@@ -16,10 +16,6 @@
 }
 
 /* Typography */
-::-moz-selection {
-  background: var(--color-primary);
-  color: #fff;
-}
 ::selection {
   background: var(--color-primary);
   color: #fff;
@@ -285,22 +281,6 @@ a {
   font-size: 2rem;
   outline: 0;
   padding: 1.5rem 3.5rem;
-}
-
-::-webkit-input-placeholder {
-  color: #cdcbd7;
-}
-
-::-moz-placeholder {
-  color: #cdcbd7;
-}
-
-:-ms-input-placeholder {
-  color: #cdcbd7;
-}
-
-::-ms-input-placeholder {
-  color: #cdcbd7;
 }
 
 ::placeholder {
@@ -634,6 +614,7 @@ a {
 
 .block__header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .block__heading {
@@ -653,14 +634,12 @@ a {
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .container {
@@ -830,5 +809,85 @@ a {
   .block-showcase__image > img {
     width: auto;
     max-width: 700px;
+  }
+}
+/* Footer */
+.footer {
+  background: #232323;
+}
+
+.footer a {
+  color: #777;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+
+.footer__section .list {
+  margin: 0;
+}
+
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand img {
+  /* TODO: Consider refactoring this and applying it to 
+  all images. */
+  width: 100%;
+  max-width: 230px;
+}
+
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .footer .collapsible__chevron {
+    display: none;
+  }
+
+  .footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+
+  .footer__section {
+    border: 0;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
   }
 }
